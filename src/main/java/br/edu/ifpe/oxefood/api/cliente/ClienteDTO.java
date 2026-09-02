@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data// outra forma do Getter e Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClienteDTO {

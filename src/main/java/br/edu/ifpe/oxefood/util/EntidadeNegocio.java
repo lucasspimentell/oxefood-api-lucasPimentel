@@ -21,11 +21,9 @@ public abstract class EntidadeNegocio {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
     private Long id;
-      @JsonIgnore
+    @JsonIgnore
     @Column
 
     private Boolean habilitado;
-    
+
 }
-
-

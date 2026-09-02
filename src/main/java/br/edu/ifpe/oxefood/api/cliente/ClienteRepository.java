@@ -1,8 +1,8 @@
 package br.edu.ifpe.oxefood.api.cliente;
 
-public interface ClienteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    
-}ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+
     
 }

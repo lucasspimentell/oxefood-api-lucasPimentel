@@ -17,7 +17,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@MappedSuperclass
+@MappedSuperclass //JPA
 @EntityListeners(AuditingEntityListener.class)
 
 public abstract class EntidadeAuditavel extends EntidadeNegocio {
