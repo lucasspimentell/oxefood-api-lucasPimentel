@@ -1,5 +1,7 @@
 package br.edu.ifpe.oxefood.api.produto;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -29,9 +31,19 @@ public class ProdutoService {
     @Transactional
     public Produto cadastrar(ProdutoDTO dto) {
 
-        Produto Produto = build(dto);
+        Produto produto = build(dto);
         produto.setHabilitado(true);
         return repository.save(produto);
+    }
+
+    public List<Produto> listar() {
+
+        return repository.findAll();
+    }
+
+    public Produto buscarPorId(Long id) {
+
+        return repository.findById(id).get();
     }
     
 }
