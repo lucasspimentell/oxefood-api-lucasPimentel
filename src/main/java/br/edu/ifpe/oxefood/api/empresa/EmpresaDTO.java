@@ -1,7 +1,5 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +14,7 @@ public class EmpresaDTO {
    private String site;
     
    @Column
-   private LocalDate cnpj;
+   private String cnpj;
 
    @Column
    private String inscricaoEstadual;

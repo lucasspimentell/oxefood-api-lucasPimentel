@@ -46,4 +46,12 @@ public class ProdutoService {
         return repository.findById(id).get();
     }
     
+     @Transactional
+   public void remover(Long id) {
+
+        Produto produto = repository.findById(id).get();
+        produto.setHabilitado(false);
+
+        repository.save(produto);
+   }
 }

@@ -1,7 +1,5 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import java.time.LocalDate;
-
 import org.hibernate.annotations.SQLRestriction;
 
 import br.edu.ifpe.oxefood.util.EntidadeAuditavel;
@@ -31,7 +29,7 @@ public class Empresa extends EntidadeAuditavel{
    private String site;
     
    @Column
-   private LocalDate cnpj;
+   private String cnpj;
 
    @Column
    private String inscricaoEstadual;
