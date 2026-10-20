@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmpresaDTO {
+   
+   @Column
+   private Long id;
 
    @Column
    private String site;
