@@ -5,6 +5,7 @@ import org.hibernate.annotations.SQLRestriction;
 import br.edu.ifpe.oxefood.util.EntidadeAuditavel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,10 +24,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produto  extends EntidadeAuditavel{
 
-   @Column
+   @ManyToOne
+   private CategoriaProduto categoria;
+
+
+   @Column(unique = true)
    private String codigo;
     
-   @Column
+   @Column(nullable = false, length = 100)
    private String titulo;
 
    @Column
