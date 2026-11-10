@@ -1,6 +1,10 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import jakarta.persistence.Column;
+import org.hibernate.validator.constraints.Length;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,28 +14,30 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EmpresaDTO {
    
-   @Column
+   
    private Long id;
 
-   @Column
+   
    private String site;
     
-   @Column
+   @NotBlank(message = "O CNPJ é de preenchimento obrigatório")
    private String cnpj;
 
-   @Column
+   
    private String inscricaoEstadual;
 
-   @Column
+   @NotNull (message = "O Nome é de preenchimento obrigatório")
+   @NotEmpty(message = "O Nome é de preenchimento obrigatório")
+   @Length(max = 100, message = "O Nome deverá ter no máximo {max} caracteres")
    private String nomeEmpresarial;
 
-   @Column
+   
    private String nomeFantasia;
 
-   @Column
+   
    private String fone;
 
-   @Column
+   
    private String foneAlternativo;
     
 }

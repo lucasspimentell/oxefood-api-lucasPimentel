@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.edu.ifpe.oxefood.exception.EmpresaException;
 import jakarta.transaction.Transactional;
 
 
@@ -42,6 +43,10 @@ public class EmpresaService {
 
     @Transactional
     public Empresa cadastrar(EmpresaDTO dto) {
+
+          if (!dto.getFone().substring(0,2).equals("81")) {
+            throw new EmpresaException(EmpresaException.MSG_PREFIXO_TELEFONE);
+        }
 
         Empresa empresa = build(dto);
         empresa.setHabilitado(true);

@@ -34,7 +34,7 @@ public class Empresa extends EntidadeAuditavel{
    @Column
    private String inscricaoEstadual;
 
-   @Column
+   @Column(nullable = false, length = 100)
    private String nomeEmpresarial;
 
    @Column
